@@ -1,8 +1,8 @@
-Hạ Version React 18 Xuống 17
-    - trong file package.json
+# Hạ Version React 18 Xuống 17
+    - file package.json
         "react": "^17.0.2",
         "react-dom": "^17.0.2",
-    - trong file index.js 
+    - file index.js 
         import ReactDOM from 'react-dom';
         ReactDOM.render(
             <React.StrictMode>
@@ -11,4 +11,4 @@ Hạ Version React 18 Xuống 17
             document.getElementById('root')
         );
 
-    - Chạy lại "npm install"
+    - Run "npm install"
