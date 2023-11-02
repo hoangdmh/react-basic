@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.scss';
 import MyComponent from './example/MyComponent';
+import StateComponent from './example/StateComponent';
 
 function App() {
 // const App = () => {
@@ -10,6 +11,7 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <p>Hello world! I'm coming</p>
         <MyComponent />
+        <StateComponent />
         <a
           className="App-link"
           href="https://reactjs.org"
