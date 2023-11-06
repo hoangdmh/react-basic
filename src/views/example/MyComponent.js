@@ -1,5 +1,6 @@
 import React from 'react';
 import ChillComponent from './ChildComponent';
+import AddTask from './AddTask';
 
 class MyComponent extends React.Component {
     state = {
@@ -9,16 +10,19 @@ class MyComponent extends React.Component {
             { id: 3, task: 'ReactJs', price: 1000 }
         ]
     }
-    handleClick = () => {
-        console.log('this is:');
+    addNewTask = (task) => {
+        // console.log('this is task:', task);
+        this.setState({
+            listTask: [...this.state.listTask, task]
+        })
     };
 
     render() {
         return (
             <>
+                <AddTask addNewTask={this.addNewTask} />
+
                 <ChillComponent
-                    name={'child component one'}
-                    age={20}
                     listTask={this.state.listTask}
                 />
             </>
