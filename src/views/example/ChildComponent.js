@@ -14,6 +14,12 @@ class ChillComponent extends React.Component {
         })
     }
 
+    handleDeleteTask = (id) => {
+        let idTask = id;
+        this.props.handleDeleteTask(idTask)
+        // console.log('handleDeleteTask idTask', idTask);
+    }
+
     render() {
         let { listTask } = this.props;
         let { isShow } = this.state;
@@ -30,7 +36,7 @@ class ChillComponent extends React.Component {
                                     if (item.price >= 500) {
                                         return (
                                             <div key={item.id}>
-                                                {item.task} - {item.price}$
+                                                {item.task} - {item.price}$ <span onClick={() => this.handleDeleteTask(item.id)}>X</span>
                                             </div>
                                         )
                                     }

@@ -1,8 +1,8 @@
 import logo from './logo.svg';
 import './App.scss';
 import MyComponent from './example/MyComponent';
-import StateComponent from './example/StateComponent';
-import MyForm from './example/MyForm';
+// import StateComponent from './example/StateComponent';
+// import MyForm from './example/MyForm';
 
 function App() {
   // const App = () => {

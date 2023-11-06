@@ -12,18 +12,36 @@ class MyComponent extends React.Component {
     }
     addNewTask = (task) => {
         // console.log('this is task:', task);
+        // let currentTask = this.state.listTask;
+        // currentTask.push(task)
         this.setState({
             listTask: [...this.state.listTask, task]
+            // listTask: currentTask
         })
     };
+
+    handleDeleteTask = (id) => {
+        console.log('this is idTask:', id);
+        let currentTask = this.state.listTask;
+        currentTask = currentTask.filter((item) => {
+            return item.id !== id
+        })
+
+        this.setState({
+            listTask: currentTask
+        })
+    }
 
     render() {
         return (
             <>
-                <AddTask addNewTask={this.addNewTask} />
+                <AddTask
+                    addNewTask={this.addNewTask}
+                />
 
                 <ChillComponent
                     listTask={this.state.listTask}
+                    handleDeleteTask={this.handleDeleteTask}
                 />
             </>
         )
