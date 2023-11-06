@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.scss';
 import MyComponent from './example/MyComponent';
 import StateComponent from './example/StateComponent';
+import MyForm from './example/MyForm';
 
 function App() {
 // const App = () => {
@@ -12,14 +13,7 @@ function App() {
         <p>Hello world! I'm coming</p>
         <MyComponent />
         <StateComponent />
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <MyForm />
       </header>
     </div>
   );
