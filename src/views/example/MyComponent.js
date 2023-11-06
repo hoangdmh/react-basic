@@ -1,6 +1,7 @@
 import React from 'react';
+import ChillComponent from './ChildComponent';
 
-class MyFunction extends React.Component {
+class MyComponent extends React.Component {
     handleClick = () => {
         console.log('this is:');
     };
@@ -10,9 +11,14 @@ class MyFunction extends React.Component {
             <>
                 <h2> Hi, I am Hoang</h2>
                 <button onClick={this.handleClick}>Click me</button>
+
+                <ChillComponent 
+                    name={'child component one'}
+                    age={20}
+                />
             </>
         )
     }
 }
 
-export default MyFunction;
+export default MyComponent;
