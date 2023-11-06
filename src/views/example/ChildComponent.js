@@ -1,49 +1,70 @@
 import React from "react";
 
 /* Class component */
-// class ChillComponent extends React.Component {
+class ChillComponent extends React.Component {
 
-//     render(){
-//         let { name, age, listTask } = this.props
-//         return(
-//             <>
-//                 <h2>Child component</h2>
-//                 <p>{name} - {age}</p>
+    state = {
+        isShow: false
+    }
 
-//                 {
-//                     listTask.map((item, index) => {
-//                         return(
-//                             <div className="list-task" key={item.id}>
-//                                 {item.task}
-//                             </div>
-//                         )
-//                     })
-//                 }
+    handleShow = () => {
+        // console.log('handleShow');
+        this.setState({
+            isShow: !this.state.isShow
+        })
+    }
 
-//             </>
-//         )
-//     }
-// }
+    render() {
+        let { listTask } = this.props;
+        let { isShow } = this.state;
+
+        return (
+            <>
+                {!isShow ?
+                    <button onClick={() => this.handleShow()}>Show</button>
+                    :
+                    <>
+                        <div className="list-task">
+                            {
+                                listTask.map((item, index) => {
+                                    if (item.price >= 500) {
+                                        return (
+                                            <div key={item.id}>
+                                                {item.task} - {item.price}$
+                                            </div>
+                                        )
+                                    }
+                                })
+                            }
+                        </div >
+
+                        <button onClick={() => this.handleShow()}>Hide</button>
+                    </>
+                }
+            </>
+        )
+    }
+}
 
 
 /* Function component */
-const ChillComponent = (props) => {
-    let { name, age, listTask } = props
-    return (
-        <>
-            <h2>Child component</h2>
-            <p>{name} - {age}</p>
-            {
-                listTask.map((item, index) => {
-                    return (
-                        <div className="list-task" key={item.id}>
-                            {item.task}
-                        </div>
-                    )
-                })
-            }
-        </>
-    )
-}
+// const ChillComponent = (props) => {
+//     let { name, age, listTask } = props
+//     return (
+//         <>
+//             <h2>Child component</h2>
+//             <p>{name} - {age}</p>
+//             {
+//                 listTask.map((item, index) => {
+//                     return (
+//                         <div className="list-task" key={item.id}>
+//                             {item.task}
+//                         </div>
+//                     )
+//                 })
+//             }
+//         </>
+//     )
+// }
 
 export default ChillComponent

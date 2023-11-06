@@ -4,22 +4,19 @@ import ChillComponent from './ChildComponent';
 class MyComponent extends React.Component {
     state = {
         listTask: [
-            {id: 1, task: 'Di chợ'},
-            {id: 2, task: 'Học bài'},
-            {id: 3, task: 'ReactJs'}
+            { id: 1, task: 'Di chợ', price: 500 },
+            { id: 2, task: 'Học bài', price: 400 },
+            { id: 3, task: 'ReactJs', price: 1000 }
         ]
     }
     handleClick = () => {
         console.log('this is:');
     };
 
-    render(){
-        return(
+    render() {
+        return (
             <>
-                <h2> Hi, I am Hoang</h2>
-                <button onClick={this.handleClick}>Click me</button>
-
-                <ChillComponent 
+                <ChillComponent
                     name={'child component one'}
                     age={20}
                     listTask={this.state.listTask}
