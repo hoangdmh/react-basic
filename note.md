@@ -20,3 +20,10 @@
         + tên class viết hoa chử cái đầu
     - Function component(function, arrow function)
         + return{ }
+
+# 3. Function component
+    - Khi component đó ko có state thì viết dạng function component
+
+
+# 4. Class component
+    - Khi component đó có state thì viết dạng class component
