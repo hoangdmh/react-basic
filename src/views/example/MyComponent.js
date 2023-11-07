@@ -32,7 +32,20 @@ class MyComponent extends React.Component {
         })
     }
 
+    //Lifecycle 
+    componentDidMount() {
+        //call API
+        console.log('componentDidMount is call');
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        console.log('componentDidUpdate prevProps', prevProps);
+        console.log('componentDidUpdate prevState', prevState);
+        console.log('componentDidUpdate snapshot', snapshot);
+    }
+
     render() {
+        console.log('render is call');
         return (
             <>
                 <AddTask
